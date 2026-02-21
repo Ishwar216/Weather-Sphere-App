@@ -1,0 +1,137 @@
+/* General */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: 0.5s;
+    color: white;
+    overflow-x: hidden;
+}
+
+#background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(to top, #83a4d4, #b6fbff);
+    animation: skyGradient 15s infinite alternate;
+}
+
+/* Glass container */
+.container {
+    width: 90%;
+    max-width: 380px;
+    margin: 40px auto;
+    padding: 25px;
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+
+h1#appTitle {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+/* Inputs & Buttons */
+.search-box input {
+    padding: 10px;
+    width: 60%;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+button {
+    padding: 10px 12px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.25);
+    color: white;
+    transition: 0.3s;
+}
+button:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+/* Weather Result */
+.weather-icon {
+    width: 60px;
+    margin: 10px 0;
+}
+.forecast-day {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 8px;
+    margin: 4px;
+    border-radius: 8px;
+    font-size: 12px;
+    transition: 0.3s;
+}
+.forecast-day:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Temperature Colors */
+.hot { color: #ff4e50; }
+.cold { color: #00c6ff; }
+.normal { color: white; }
+
+/* Rain Drops */
+.drop {
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    background: white;
+    animation: rainFall 0.5s linear infinite;
+}
+@keyframes rainFall {
+    from { transform: translateY(-100px); }
+    to { transform: translateY(100vh); }
+}
+
+/* Snow */
+.snowflake {
+    position: absolute;
+    font-size: 14px;
+    animation: snowFall linear infinite;
+}
+@keyframes snowFall {
+    from { transform: translateY(-10px) translateX(0); }
+    to { transform: translateY(100vh) translateX(50px); }
+}
+
+/* Lightning */
+.lightning {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0;
+    animation: flash 6s infinite;
+}
+@keyframes flash {
+    0%,95%,100% { opacity: 0; }
+    97% { opacity: 0.8; }
+}
+
+/* Dark Mode */
+.dark {
+    background: #111;
+    color: white;
+}
+
+/* Animated Sky Gradient */
+@keyframes skyGradient {
+    0% { background: #83a4d4; }
+    50% { background: #b6fbff; }
+    100% { background: #83a4d4; }
+}
